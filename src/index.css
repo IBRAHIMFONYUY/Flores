@@ -1,13 +1,253 @@
-body {
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 500vh;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center   ;
+  place-content: center;
+  position: relative;
+  .logo{
+    position: absolute;
+  }
+}
+.load{
+  width: 60px;
+  height:60px;
+  border-radius: 100%;
+  border: solid 3px ;
+  border-color: red;
+  border-top: white solid ;
+  border-bottom: solid white;
+  
+  animation: load linear infinite 1s;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes load {
+  from{
+    transform: rotate(0deg);
+    
+  }
+  
+  to{
+    transform: rotate(360deg);
+  }
+}
+header{
+  background-color: white;
+  position: fixed;
+  display: flex;
+  justify-content:space-around ;
+  height: 50px;
+  width: 100%;
+  padding-top:10px ;
+  align-items: center;
+  z-index: 100;
+  
+}
+.hamburger{
+  display: none;
+  transition: 0.6 ease-in-out;
+}
+.side-bar{
+  width: 60%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  left: -5000px;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 0px 5px black;
+  transition: 0.6s ease-in-out;
+}
+.side-bar.open{
+  left: 0px;
+
+}.side-bar.close{
+  left: -5000px;
+}
+
+button:hover{
+  opacity: 0.7;
+}
+nav{
+  width: 60%;
+}
+.logo{
+  font-size: 30px;
+  color: red;
+  font-weight: bolder;
+}
+ul{
+  display: flex;
+  margin: 10px;
+  float: right;
+}
+.responsive{
+  display: flex;
+  margin: 10px;
+  float: right;
+}
+.links{
+  display: flex   ;
+}
+.a{
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+}
+.signup{
+  height: 25px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  align-items: center;
+  place-content: center;
+}
+main{
+  padding-top: 70px;
+  position: relative;
+  width: 100%;
+}
+section{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.intro{
+  text-align: center;
+}
+.bigintro{
+  font-size: 40px;
+  font-weight: bolder;
+}
+.searchbar{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.searchbars{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  align-items: center;
+  
+}
+.inputs{
+  position: relative;
+  place-content: center;
+  input{
+    height: 30px;
+    width: 280px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid    ;
+  }
+}
+.icon{
+  position: absolute;
+  top:25px;
+  left: 280px;
+}
+.search-btn{
+  width: 100px;
+  height: 55px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.search-btn:hover{
+  opacity: 0.7;
+}
+.hero{
+  margin-top: 10px;
+  justify-content: center;
+ position: relative;
+ overflow: hidden;
+ height: 100%;
+ background-color: white;
+ 
+
+ 
+}
+.service{
+  margin-top: 15px;
+  
+}
+.sep{
+  color: red;
+
+}
+.service-items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  .item{
+    height: 150px;
+    width: 400px;
+    background-color: whitesmoke;
+    align-items: center;
+    place-content: center;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    .top{
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+  }
+  .item:hover{
+    box-shadow: 0px 0px 10px black;
+  }
+}
+
+@media (max-width:700px) {
+  .hamburger{
+    display: block;
+
+  }
+  .responsive{
+    display: none;
+  }
+  .side-bar{
+    display: block;
+    padding: 20px;
+    justify-content: center;
+    .links{
+      display: block;
+      
+    }
+    .a{
+      display: block;
+      margin: 10px;
+      font-size: 20px;
+      padding: 10px;
+
+
+    }
+    .signup{
+      margin: 20px;
+    }
+  }
+  .search-btn{
+    width: 300px;
+  }
+  
 }
